@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antz's Garden - Premium Salad Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'green-primary': '#10b981',
+                        'green-secondary': '#059669',
+                        'green-light': '#d1fae5',
+                        'green-dark': '#047857'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-green-50 font-sans">
+    <!-- Header -->
+    <header class="bg-green-primary shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="bg-white rounded-full p-2">
+                        <svg class="w-8 h-8 text-green-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold text-white">Antz's Garden</h1>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-8">
+                    <div class="relative">
+                        <input type="text" placeholder="Search for fresh salads..." class="w-full px-4 py-2 rounded-lg border-0 focus:ring-2 focus:ring-green-secondary outline-none">
+                        <button class="absolute right-2 top-2 text-green-primary hover:text-green-secondary">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-white hover:text-green-light transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </button>
+                    <div class="relative">
+                        <button id="cartBtn" class="text-white hover:text-green-light transition-colors relative">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+                            </svg>
+                            <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-r from-green-primary to-green-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Fresh, Healthy, Delicious</h2>
+            <p class="text-xl mb-8">Premium salads made with locally sourced organic ingredients</p>
+        </div>
+    </section>
+
+    <!-- Flash Sale -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">🥗Salads</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-green-light p-4 rounded-lg border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showProductDetails('Garden Salad', 1, 569, '🥗', 'Fresh garden vegetables with mixed greens and house dressing', 'Mixed greens, tomatoes, cucumbers, carrots, bell peppers, house dressing', {calories: '180', protein: '6g', carbs: '12g', fat: '14g'}, 4.6, 156)">
+                    <div class="bg-green-200 h-32 rounded mb-3 flex items-center justify-center">
+                        <span class="text-4xl">🥗</span>
+                    </div>
+                    <h4 class="font-semibold text-sm mb-1">Garden Salad</h4>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-primary font-bold">฿1</span>
+                    </div>
+                </div>
+                <div class="bg-green-light p-4 rounded-lg border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showProductDetails('Mix Salad', 1, 639, '🥬', 'Colorful mix of seasonal greens and vegetables', 'Arugula, spinach, lettuce, cherry tomatoes, red onion, balsamic vinaigrette', {calories: '220', protein: '8g', carbs: '16g', fat: '16g'}, 4.5, 134)">
+                    <div class="bg-green-200 h-32 rounded mb-3 flex items-center justify-center">
+                        <span class="text-4xl">🥬</span>
+                    </div>
+                    <h4 class="font-semibold text-sm mb-1">Mix Salad</h4>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-primary font-bold">฿1</span>
+                    </div>
+                </div>
+                <div class="bg-green-light p-4 rounded-lg border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showProductDetails('Green Salad', 1, 539, '🌿', 'Simple and fresh green leafy salad', 'Lettuce, spinach, arugula, cucumber, olive oil, lemon dressing', {calories: '160', protein: '5g', carbs: '10g', fat: '12g'}, 4.4, 98)">
+                    <div class="bg-green-200 h-32 rounded mb-3 flex items-center justify-center">
+                        <span class="text-4xl">🌿</span>
+                    </div>
+                    <h4 class="font-semibold text-sm mb-1">Green Salad</h4>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-primary font-bold">฿1</span>
+                    </div>
+                </div>
+                <div class="bg-green-light p-4 rounded-lg border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showProductDetails('Salmon Salad', 1, 999, '🐟', 'Premium grilled salmon over fresh greens', 'Grilled salmon, mixed greens, avocado, cherry tomatoes, lemon herb dressing', {calories: '420', protein: '35g', carbs: '14g', fat: '28g'}, 4.8, 187)">
+                    <div class="bg-green-200 h-32 rounded mb-3 flex items-center justify-center">
+                        <span class="text-4xl">🐟</span>
+                    </div>
+                    <h4 class="font-semibold text-sm mb-1">Salmon Salad</h4>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-primary font-bold">฿1</span>
+                    </div>
+                </div>
+                <div class="bg-green-light p-4 rounded-lg border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showProductDetails('Chicken Salad', 1, 819, '🐔', 'Tender grilled chicken breast with fresh vegetables', 'Grilled chicken, romaine lettuce, tomatoes, cucumbers, ranch dressing', {calories: '380', protein: '32g', carbs: '18g', fat: '22g'}, 4.7, 203)">
+                    <div class="bg-green-200 h-32 rounded mb-3 flex items-center justify-center">
+                        <span class="text-4xl">🐔</span>
+                    </div>
+                    <h4 class="font-semibold text-sm mb-1">Chicken Salad</h4>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-primary font-bold">฿1</span>
+                    </div>
+                </div>
+                <div class="bg-green-light p-4 rounded-lg border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showProductDetails('Pork Salad', 1, 899, '🥩', 'Seasoned pork strips over crisp salad greens', 'Seasoned pork, mixed greens, bell peppers, onions, Asian sesame dressing', {calories: '410', protein: '28g', carbs: '20g', fat: '26g'}, 4.6, 142)">
+                    <div class="bg-green-200 h-32 rounded mb-3 flex items-center justify-center">
+                        <span class="text-4xl">🥩</span>
+                    </div>
+                    <h4 class="font-semibold text-sm mb-1">Pork Salad</h4>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-primary font-bold">฿1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-green-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="mb-6">
+                    <h4 class="font-bold text-lg mb-4">Antz's Garden</h4>
+                    <p class="text-green-light mb-4">Fresh, healthy salads delivered daily. Made with love and locally sourced ingredients.</p>
+                    <div class="flex justify-center space-x-4">
+                        <button class="text-green-light hover:text-white">📘</button>
+                        <button class="text-green-light hover:text-white">📷</button>
+                        <button class="text-green-light hover:text-white">🐦</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-green-secondary mt-8 pt-8 text-center text-green-light">
+                <p>&copy; 2024 Antz's Garden. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full p-6 max-h-screen overflow-y-auto">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 id="productTitle" class="text-2xl font-bold text-gray-800"></h3>
+                    <button onclick="closeProductModal()" class="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Product Image -->
+                    <div class="bg-green-100 h-64 rounded-lg flex items-center justify-center">
+                        <span id="productEmoji" class="text-8xl"></span>
+                    </div>
+                    
+                    <!-- Product Info -->
+                    <div>
+                        <div class="mb-4">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span id="productPrice" class="text-3xl font-bold text-green-primary"></span>
+                                <span id="productOriginalPrice" class="text-gray-400 line-through text-lg"></span>
+                            </div>
+                            <div id="productDiscount" class="text-red-500 font-semibold mb-3"></div>
+                        </div>
+                        
+                        <!-- Rating -->
+                        <div class="flex items-center mb-4">
+                            <div id="productStars" class="flex text-yellow-400 text-lg"></div>
+                            <span id="productRating" class="text-gray-600 ml-2 font-medium"></span>
+                            <span id="productReviewCount" class="text-gray-500 ml-2"></span>
+                        </div>
+                        
+                        <!-- Description -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Description</h4>
+                            <p id="productDescription" class="text-gray-600 text-sm leading-relaxed"></p>
+                        </div>
+                        
+                        <!-- Ingredients -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Ingredients</h4>
+                            <p id="productIngredients" class="text-gray-600 text-sm"></p>
+                        </div>
+                        
+                        <!-- Nutrition -->
+                        <div class="mb-6">
+                            <h4 class="font-semibold mb-2">Nutrition (per serving)</h4>
+                            <div id="productNutrition" class="grid grid-cols-2 gap-2 text-sm text-gray-600"></div>
+                        </div>
+                        
+                        <!-- Quantity and Add to Cart -->
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="flex items-center border rounded-lg">
+                                <button onclick="decreaseQuantity()" class="px-3 py-2 hover:bg-gray-100">-</button>
+                                <span id="quantity" class="px-4 py-2 border-x">1</span>
+                                <button onclick="increaseQuantity()" class="px-3 py-2 hover:bg-gray-100">+</button>
+                            </div>
+                            <button onclick="addToCartFromModal()" class="flex-1 bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <button onclick="buyNow()" class="w-full bg-green-secondary text-white py-3 rounded-lg hover:bg-green-dark transition-colors font-bold">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Reviews Section -->
+                <div class="mt-8 border-t pt-6">
+                    <h4 class="text-lg font-bold mb-4">Customer Reviews</h4>
+                    
+                    <!-- Review Form (only shown if user purchased this product) -->
+                    <div id="reviewForm" class="mb-6 p-4 bg-green-50 rounded-lg border border-green-200" style="display: none;">
+                        <h5 class="font-semibold mb-3 text-green-800">Share Your Experience</h5>
+                        <p id="reviewHelpText" class="text-sm text-green-700 mb-3">Share your experience after trying this salad!</p>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Your Name</label>
+                                <input type="text" id="reviewerName" placeholder="Enter your name" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Rating</label>
+                                <div class="flex space-x-1">
+                                    <button type="button" class="star-btn text-2xl text-gray-300 hover:text-yellow-400" data-rating="1">⭐</button>
+                                    <button type="button" class="star-btn text-2xl text-gray-300 hover:text-yellow-400" data-rating="2">⭐</button>
+                                    <button type="button" class="star-btn text-2xl text-gray-300 hover:text-yellow-400" data-rating="3">⭐</button>
+                                    <button type="button" class="star-btn text-2xl text-gray-300 hover:text-yellow-400" data-rating="4">⭐</button>
+                                    <button type="button" class="star-btn text-2xl text-gray-300 hover:text-yellow-400" data-rating="5">⭐</button>
+                                </div>
+                                <input type="hidden" id="selectedRating" value="0">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Your Review</label>
+                                <textarea id="reviewComment" placeholder="Tell others about your experience with this salad..." rows="3" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none resize-none"></textarea>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button onclick="submitReview()" class="bg-green-primary text-white px-4 py-2 rounded-lg hover:bg-green-secondary transition-colors font-medium">
+                                    Submit Review
+                                </button>
+                                <button onclick="cancelReview()" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition-colors">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="reviewsContainer" class="space-y-4">
+                        <!-- Reviews will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold">Shopping Cart</h3>
+                    <button onclick="closeCart()" class="text-gray-500 hover:text-gray-700">✕</button>
+                </div>
+                <div id="cartItems" class="space-y-3 mb-4">
+                    <!-- Cart items will be added here -->
+                </div>
+                <div class="border-t pt-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-bold">Total: </span>
+                        <span id="cartTotal" class="font-bold text-green-primary">$0.00</span>
+                    </div>
+                    <button onclick="proceedToCheckout()" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-lg w-full p-6 max-h-screen overflow-y-auto">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-2xl font-bold text-gray-800">Checkout</h3>
+                    <button onclick="closeCheckout()" class="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-3">Order Summary</h4>
+                    <div id="checkoutItems" class="space-y-2 mb-3">
+                        <!-- Checkout items will be populated here -->
+                    </div>
+                    <div class="border-t pt-3">
+                        <div class="flex justify-between items-center font-bold text-lg">
+                            <span>Total:</span>
+                            <span id="checkoutTotal" class="text-green-primary">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Customer Information -->
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-3">Customer Information</h4>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <input type="text" placeholder="First Name" class="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none">
+                        <input type="text" placeholder="Last Name" class="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none">
+                    </div>
+                    <input type="email" placeholder="Email Address" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none mb-4">
+                    <input type="tel" placeholder="Phone Number" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none">
+                </div>
+                
+                <!-- Delivery Address -->
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-3">Delivery Address</h4>
+                    <input type="text" placeholder="Street Address" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none mb-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="City" class="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none">
+                        <input type="text" placeholder="ZIP Code" class="px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-primary outline-none">
+                    </div>
+                </div>
+                
+                <!-- Payment Method -->
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-3">Payment Method</h4>
+                    <div class="space-y-3 mb-4">
+                        <!-- Mobile Banking -->
+                        <div class="border rounded-lg p-3">
+                            <h5 class="font-medium text-sm mb-2 text-gray-700">Mobile Banking</h5>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="kbank" class="mr-2" checked>
+                                    <span class="text-green-600">🏦 K PLUS</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="scb" class="mr-2">
+                                    <span class="text-purple-600">🏦 SCB Easy</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="bbl" class="mr-2">
+                                    <span class="text-blue-600">🏦 Bualuang</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="ktb" class="mr-2">
+                                    <span class="text-red-600">🏦 Krungthai</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="bay" class="mr-2">
+                                    <span class="text-yellow-600">🏦 Krungsri</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="tmb" class="mr-2">
+                                    <span class="text-indigo-600">🏦 TMB Touch</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="gsb" class="mr-2">
+                                    <span class="text-pink-600">🏦 GSB</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="uob" class="mr-2">
+                                    <span class="text-blue-800">🏦 UOB Mighty</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- E-Wallets -->
+                        <div class="border rounded-lg p-3">
+                            <h5 class="font-medium text-sm mb-2 text-gray-700">E-Wallets & Digital Payments</h5>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="truemoney" class="mr-2">
+                                    <span class="text-red-500">💰 TrueMoney</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="rabbit" class="mr-2">
+                                    <span class="text-green-500">🐰 Rabbit LINE Pay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="airpay" class="mr-2">
+                                    <span class="text-blue-500">✈️ AirPay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="shopeepay" class="mr-2">
+                                    <span class="text-orange-500">🛒 ShopeePay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="grabpay" class="mr-2">
+                                    <span class="text-green-600">🚗 GrabPay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="foodpanda" class="mr-2">
+                                    <span class="text-pink-500">🐼 foodpanda Pay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="lineman" class="mr-2">
+                                    <span class="text-green-400">🛵 LINE MAN Wallet</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="bluepay" class="mr-2">
+                                    <span class="text-blue-600">💙 Blue Pay</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- International Digital Wallets -->
+                        <div class="border rounded-lg p-3">
+                            <h5 class="font-medium text-sm mb-2 text-gray-700">International Digital Wallets</h5>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="paypal" class="mr-2">
+                                    <span class="text-blue-600">💙 PayPal</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="googlepay" class="mr-2">
+                                    <span class="text-green-600">🟢 Google Pay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="applepay" class="mr-2">
+                                    <span class="text-gray-800">🍎 Apple Pay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="alipay" class="mr-2">
+                                    <span class="text-blue-500">🅰️ Alipay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="wechatpay" class="mr-2">
+                                    <span class="text-green-500">💬 WeChat Pay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="samsung" class="mr-2">
+                                    <span class="text-blue-800">📱 Samsung Pay</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- QR Code Payments -->
+                        <div class="border rounded-lg p-3">
+                            <h5 class="font-medium text-sm mb-2 text-gray-700">QR Code Payment</h5>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="promptpay" class="mr-2">
+                                    <span class="text-blue-600">📱 PromptPay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="thaiQR" class="mr-2">
+                                    <span class="text-purple-600">🇹🇭 Thai QR Payment</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="paynow" class="mr-2">
+                                    <span class="text-red-600">🇸🇬 PayNow</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="duitnow" class="mr-2">
+                                    <span class="text-blue-700">🇲🇾 DuitNow</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Cryptocurrency -->
+                        <div class="border rounded-lg p-3">
+                            <h5 class="font-medium text-sm mb-2 text-gray-700">Cryptocurrency</h5>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="bitcoin" class="mr-2">
+                                    <span class="text-orange-500">₿ Bitcoin</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="ethereum" class="mr-2">
+                                    <span class="text-blue-600">⟠ Ethereum</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="usdt" class="mr-2">
+                                    <span class="text-green-600">₮ USDT</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="binance" class="mr-2">
+                                    <span class="text-yellow-500">🔶 Binance Pay</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Buy Now Pay Later -->
+                        <div class="border rounded-lg p-3">
+                            <h5 class="font-medium text-sm mb-2 text-gray-700">Buy Now, Pay Later</h5>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="atome" class="mr-2">
+                                    <span class="text-green-600">🟢 Atome</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="tendopay" class="mr-2">
+                                    <span class="text-blue-600">💳 TendoPay</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="billease" class="mr-2">
+                                    <span class="text-purple-600">📱 Billease</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="kredivo" class="mr-2">
+                                    <span class="text-red-600">💰 Kredivo</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Traditional Methods -->
+                        <div class="border rounded-lg p-3">
+                            <h5 class="font-medium text-sm mb-2 text-gray-700">Traditional Methods</h5>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="visa" class="mr-2">
+                                    <span class="text-blue-600">💳 Visa</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="mastercard" class="mr-2">
+                                    <span class="text-red-600">💳 Mastercard</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="amex" class="mr-2">
+                                    <span class="text-blue-800">💳 American Express</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="jcb" class="mr-2">
+                                    <span class="text-green-600">💳 JCB</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="cash" class="mr-2">
+                                    <span>💵 Cash on Delivery</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="transfer" class="mr-2">
+                                    <span>🏧 Bank Transfer</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="installment" class="mr-2">
+                                    <span class="text-purple-600">📅 Installment Plan</span>
+                                </label>
+                                <label class="flex items-center text-sm">
+                                    <input type="radio" name="payment" value="counter" class="mr-2">
+                                    <span class="text-gray-600">🏪 Counter Service</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="completeOrder()" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold text-lg">
+                    Complete Order
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signInModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Sign In</h3>
+                    <button onclick="closeSignInModal()" class="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
+                </div>
+                
+                <!-- Social Sign In Options -->
+                <div class="space-y-3 mb-6">
+                    <!-- Primary Social Options -->
+                    <button onclick="signInWithGoogle()" class="w-full flex items-center justify-center space-x-3 bg-white border-2 border-gray-300 hover:border-gray-400 py-3 px-4 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <span class="font-medium text-gray-700">Continue with Google</span>
+                    </button>
+                    
+                    <button onclick="signInWithApple()" class="w-full flex items-center justify-center space-x-3 bg-black hover:bg-gray-800 text-white py-3 px-4 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        <span class="font-medium">Continue with Apple</span>
+                    </button>
+                </div>
+                
+                <!-- Divider -->
+                <div class="relative mb-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or continue with email</span>
+                    </div>
+                </div>
+                
+                <!-- Email/Password Form -->
+                <form id="signInForm" onsubmit="signInWithEmail(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="signInEmail" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none" placeholder="Enter your email">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="signInPassword" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none pr-10" placeholder="Enter your password">
+                            <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600">
+                                <svg id="eyeIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-gray-300 text-green-primary focus:ring-green-primary">
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <button type="button" onclick="showForgotPassword()" class="text-sm text-green-primary hover:text-green-secondary">
+                            Forgot password?
+                        </button>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold">
+                        Sign In
+                    </button>
+                </form>
+                
+
+                
+                <!-- Sign Up Link -->
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-gray-600">
+                        Don't have an account? 
+                        <button onclick="showSignUpModal()" class="text-green-primary hover:text-green-secondary font-medium">
+                            Sign up here
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6 max-h-screen overflow-y-auto">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Create Account</h3>
+                    <button onclick="closeSignUpModal()" class="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
+                </div>
+                
+                <!-- Social Sign Up Options -->
+                <div class="space-y-3 mb-6">
+                    <!-- Primary Social Options -->
+                    <button onclick="signUpWithGoogle()" class="w-full flex items-center justify-center space-x-3 bg-white border-2 border-gray-300 hover:border-gray-400 py-3 px-4 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <span class="font-medium text-gray-700">Sign up with Google</span>
+                    </button>
+                    
+                    <button onclick="signUpWithApple()" class="w-full flex items-center justify-center space-x-3 bg-black hover:bg-gray-800 text-white py-3 px-4 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        <span class="font-medium">Sign up with Apple</span>
+                    </button>
+                </div>
+                
+                <!-- Divider -->
+                <div class="relative mb-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or create account with email</span>
+                    </div>
+                </div>
+                
+                <!-- Sign Up Form -->
+                <form id="signUpForm" onsubmit="signUpWithEmail(event)" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                            <input type="text" id="signUpFirstName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none" placeholder="First name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                            <input type="text" id="signUpLastName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none" placeholder="Last name">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="signUpEmail" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none" placeholder="Enter your email">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="signUpPassword" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none pr-10" placeholder="Create a password">
+                            <button type="button" onclick="toggleSignUpPasswordVisibility()" class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600">
+                                <svg id="signUpEyeIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Password must be at least 8 characters long</p>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <input type="password" id="confirmPassword" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none" placeholder="Confirm your password">
+                    </div>
+                    
+
+                    
+                    <button type="submit" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold">
+                        Create Account
+                    </button>
+                </form>
+                
+                <!-- Sign In Link -->
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">
+                        Already have an account? 
+                        <button onclick="showSignInModal()" class="text-green-primary hover:text-green-secondary font-medium">
+                            Sign in here
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Reset Password</h3>
+                    <button onclick="closeForgotPasswordModal()" class="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
+                </div>
+                
+                <p class="text-gray-600 mb-6">Enter your email address and we'll send you a link to reset your password.</p>
+                
+                <form id="forgotPasswordForm" onsubmit="sendPasswordReset(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="resetEmail" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-primary focus:border-transparent outline-none" placeholder="Enter your email">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold">
+                        Send Reset Link
+                    </button>
+                </form>
+                
+                <div class="mt-6 text-center">
+                    <button onclick="showSignInModal()" class="text-sm text-green-primary hover:text-green-secondary">
+                        Back to Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Verification Modal -->
+    <div id="emailVerificationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">📧</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Verify Your Email</h3>
+                    <p class="text-gray-600">We've sent a verification code to:</p>
+                    <p id="verificationEmail" class="font-medium text-green-primary"></p>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Enter Verification Code</label>
+                    <div class="flex space-x-2 justify-center">
+                        <input type="text" id="code1" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNext(this, 'code2')">
+                        <input type="text" id="code2" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNext(this, 'code3')">
+                        <input type="text" id="code3" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNext(this, 'code4')">
+                        <input type="text" id="code4" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNext(this, 'code5')">
+                        <input type="text" id="code5" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNext(this, 'code6')">
+                        <input type="text" id="code6" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="verifyCode()">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <div class="flex items-start">
+                            <div class="text-blue-500 mr-3 mt-0.5">ℹ️</div>
+                            <div>
+                                <p class="text-sm text-blue-800 font-medium mb-1">Demo Mode</p>
+                                <p class="text-sm text-blue-700">Your verification code is: <span id="demoCode" class="font-bold bg-blue-100 px-2 py-1 rounded">123456</span></p>
+                                <p class="text-xs text-blue-600 mt-1">In a real app, this would be sent to your email.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-600">Code expires in:</span>
+                        <span id="verificationTimer" class="font-medium text-red-500">15:00</span>
+                    </div>
+                </div>
+                
+                <button onclick="verifyEmailCode()" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold mb-3">
+                    Verify Email
+                </button>
+                
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-2">Didn't receive the code?</p>
+                    <button onclick="resendVerificationCode()" class="text-green-primary hover:text-green-secondary font-medium text-sm">
+                        Resend Code
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign-In Verification Modal -->
+    <div id="signInVerificationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔐</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Verify Sign-In</h3>
+                    <p class="text-gray-600">For your security, we've sent a verification code to:</p>
+                    <p id="signInVerificationEmail" class="font-medium text-green-primary"></p>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Enter Verification Code</label>
+                    <div class="flex space-x-2 justify-center">
+                        <input type="text" id="signInCode1" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNextSignIn(this, 'signInCode2')">
+                        <input type="text" id="signInCode2" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNextSignIn(this, 'signInCode3')">
+                        <input type="text" id="signInCode3" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNextSignIn(this, 'signInCode4')">
+                        <input type="text" id="signInCode4" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNextSignIn(this, 'signInCode5')">
+                        <input type="text" id="signInCode5" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="moveToNextSignIn(this, 'signInCode6')">
+                        <input type="text" id="signInCode6" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-primary focus:ring-2 focus:ring-green-primary outline-none" oninput="verifySignInCode()">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <div class="flex items-start">
+                            <div class="text-blue-500 mr-3 mt-0.5">ℹ️</div>
+                            <div>
+                                <p class="text-sm text-blue-800 font-medium mb-1">Demo Mode</p>
+                                <p class="text-sm text-blue-700">Your sign-in code is: <span id="signInDemoCode" class="font-bold bg-blue-100 px-2 py-1 rounded">123456</span></p>
+                                <p class="text-xs text-blue-600 mt-1">In a real app, this would be sent to your email.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-600">Code expires in:</span>
+                        <span id="signInVerificationTimer" class="font-medium text-red-500">10:00</span>
+                    </div>
+                </div>
+                
+                <button onclick="verifySignInEmailCode()" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold mb-3">
+                    Verify & Sign In
+                </button>
+                
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-2">Didn't receive the code?</p>
+                    <button onclick="resendSignInVerificationCode()" class="text-green-primary hover:text-green-secondary font-medium text-sm">
+                        Resend Code
+                    </button>
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-gray-200 text-center">
+                    <button onclick="cancelSignInVerification()" class="text-gray-500 hover:text-gray-700 text-sm">
+                        Cancel & Return to Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6 text-center">
+                <div class="text-6xl mb-4">✅</div>
+                <h3 class="text-2xl font-bold text-green-primary mb-4">Order Confirmed!</h3>
+                <p class="text-gray-600 mb-4">Thank you for your order! Your fresh salads will be delivered within 30-45 minutes.</p>
+                <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <p class="text-sm text-gray-600">Order #<span id="orderNumber" class="font-bold">12345</span></p>
+                    <p class="text-sm text-gray-600">Estimated delivery: <span class="font-bold">30-45 minutes</span></p>
+                </div>
+                <button onclick="closeSuccess()" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let cartTotal = 0;
+        let currentProduct = {};
+        let quantity = 1;
+
+        // Real customer reviews data - load from localStorage or start empty
+        let reviewsData = JSON.parse(localStorage.getItem('reviewsData') || '{}');
+        
+        // Track purchased products for review eligibility
+        let purchasedProducts = JSON.parse(localStorage.getItem('purchasedProducts') || '[]');
+        
+        // User authentication state
+        let currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+        
+        // Update UI based on authentication state
+        function updateAuthUI() {
+            const signInBtn = document.querySelector('button[onclick="showSignInModal()"]');
+            if (currentUser) {
+                signInBtn.textContent = `Hi, ${currentUser.firstName}`;
+                signInBtn.onclick = showUserMenu;
+            } else {
+                signInBtn.textContent = 'Sign In';
+                signInBtn.onclick = showSignInModal;
+            }
+        }
+        
+        // Initialize auth UI on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateAuthUI();
+        });
+
+        function showProductDetails(name, price, originalPrice, emoji, description, ingredients, nutrition, rating, reviewCount) {
+            currentProduct = { name, price, originalPrice, emoji, description, ingredients, nutrition, rating, reviewCount };
+            quantity = 1;
+            
+            document.getElementById('productTitle').textContent = name;
+            document.getElementById('productPrice').textContent = `฿${price}`;
+            document.getElementById('productOriginalPrice').textContent = originalPrice ? `฿${originalPrice}` : '';
+            document.getElementById('productEmoji').textContent = emoji;
+            document.getElementById('productDescription').textContent = description;
+            document.getElementById('productIngredients').textContent = ingredients;
+            document.getElementById('quantity').textContent = quantity;
+            
+            // Hide discount section completely
+            document.getElementById('productDiscount').textContent = '';
+            document.getElementById('productOriginalPrice').style.display = 'none';
+            
+            // Rating
+            const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '');
+            document.getElementById('productStars').textContent = stars;
+            document.getElementById('productRating').textContent = `${rating}/5`;
+            document.getElementById('productReviewCount').textContent = `(${reviewCount} reviews)`;
+            
+            // Nutrition
+            const nutritionContainer = document.getElementById('productNutrition');
+            nutritionContainer.innerHTML = '';
+            Object.entries(nutrition).forEach(([key, value]) => {
+                const div = document.createElement('div');
+                div.innerHTML = `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}`;
+                nutritionContainer.appendChild(div);
+            });
+            
+            // Reviews
+            displayReviews(name);
+            
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+
+        function displayReviews(productName) {
+            const reviewsContainer = document.getElementById('reviewsContainer');
+            const reviewForm = document.getElementById('reviewForm');
+            const reviews = reviewsData[productName] || [];
+            
+            // Check if user has purchased this product and hasn't reviewed it yet
+            const hasPurchased = purchasedProducts.includes(productName);
+            const hasReviewed = reviews.some(review => review.isCurrentUser);
+            
+            // Show review form if user purchased but hasn't reviewed (always available after purchase)
+            if (hasPurchased && !hasReviewed) {
+                reviewForm.style.display = 'block';
+                setupStarRating();
+                
+                // Add helpful message for returning customers
+                const helpText = document.getElementById('reviewHelpText');
+                if (helpText) {
+                    helpText.textContent = 'Share your experience after trying this salad!';
+                }
+            } else {
+                reviewForm.style.display = 'none';
+            }
+            
+            reviewsContainer.innerHTML = '';
+            
+            if (reviews.length === 0) {
+                if (hasPurchased && !hasReviewed) {
+                    reviewsContainer.innerHTML = '<p class="text-gray-500 text-center py-4">No reviews yet. Share your experience after trying this salad!</p>';
+                } else {
+                    reviewsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">No customer reviews yet.<br>Purchase this salad to leave the first review!</p>';
+                }
+                return;
+            }
+            
+            reviews.forEach(review => {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = 'border-b border-gray-200 pb-4';
+                reviewDiv.innerHTML = `
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-semibold">${review.name}${review.isCurrentUser ? ' (You)' : ''}</span>
+                            <div class="flex text-yellow-400 text-sm">${'⭐'.repeat(review.rating)}</div>
+                        </div>
+                        <span class="text-gray-500 text-sm">${review.date}</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">${review.comment}</p>
+                `;
+                reviewsContainer.appendChild(reviewDiv);
+            });
+        }
+        
+        function setupStarRating() {
+            const starButtons = document.querySelectorAll('.star-btn');
+            const selectedRatingInput = document.getElementById('selectedRating');
+            
+            starButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    selectedRatingInput.value = rating;
+                    
+                    // Update star display
+                    starButtons.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.remove('text-gray-300');
+                            star.classList.add('text-yellow-400');
+                        } else {
+                            star.classList.remove('text-yellow-400');
+                            star.classList.add('text-gray-300');
+                        }
+                    });
+                });
+            });
+        }
+        
+        function submitReview() {
+            const reviewerName = document.getElementById('reviewerName').value.trim();
+            const selectedRating = parseInt(document.getElementById('selectedRating').value);
+            const reviewComment = document.getElementById('reviewComment').value.trim();
+            
+            // Validation
+            if (!reviewerName) {
+                alert('Please enter your name');
+                return;
+            }
+            
+            if (selectedRating === 0) {
+                alert('Please select a rating');
+                return;
+            }
+            
+            if (!reviewComment) {
+                alert('Please write a review comment');
+                return;
+            }
+            
+            if (reviewComment.length < 10) {
+                alert('Please write a more detailed review (at least 10 characters)');
+                return;
+            }
+            
+            // Create review object
+            const review = {
+                name: reviewerName,
+                rating: selectedRating,
+                comment: reviewComment,
+                date: new Date().toLocaleDateString(),
+                isCurrentUser: true
+            };
+            
+            // Add to reviews data
+            if (!reviewsData[currentProduct.name]) {
+                reviewsData[currentProduct.name] = [];
+            }
+            reviewsData[currentProduct.name].push(review);
+            
+            // Save to localStorage
+            localStorage.setItem('reviewsData', JSON.stringify(reviewsData));
+            
+            // Clear form
+            document.getElementById('reviewerName').value = '';
+            document.getElementById('selectedRating').value = '0';
+            document.getElementById('reviewComment').value = '';
+            
+            // Reset stars
+            document.querySelectorAll('.star-btn').forEach(star => {
+                star.classList.remove('text-yellow-400');
+                star.classList.add('text-gray-300');
+            });
+            
+            // Refresh reviews display
+            displayReviews(currentProduct.name);
+            
+            // Show success message
+            showReviewSuccess();
+        }
+        
+        function cancelReview() {
+            // Clear form
+            document.getElementById('reviewerName').value = '';
+            document.getElementById('selectedRating').value = '0';
+            document.getElementById('reviewComment').value = '';
+            
+            // Reset stars
+            document.querySelectorAll('.star-btn').forEach(star => {
+                star.classList.remove('text-yellow-400');
+                star.classList.add('text-gray-300');
+            });
+        }
+        
+        function showReviewSuccess() {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-20 right-4 bg-green-primary text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            notification.innerHTML = '✅ Thank you! Your review has been submitted.';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 3000);
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('quantity').textContent = quantity;
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById('quantity').textContent = quantity;
+            }
+        }
+
+        function addToCartFromModal() {
+            for (let i = 0; i < quantity; i++) {
+                cart.push({ name: currentProduct.name, price: currentProduct.price });
+            }
+            updateCartDisplay();
+            showCartNotification();
+            closeProductModal();
+        }
+
+        function buyNow() {
+            // Create temporary cart with current product
+            const tempCart = [];
+            for (let i = 0; i < quantity; i++) {
+                tempCart.push({ name: currentProduct.name, price: currentProduct.price });
+            }
+            
+            // Populate checkout with current product only
+            populateCheckout(tempCart);
+            closeProductModal();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartDisplay();
+            showCartNotification();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotalElement = document.getElementById('cartTotal');
+            
+            cartCount.textContent = cart.length;
+            cartTotal = cart.reduce((sum, salad) => sum + salad.price, 0);
+            cartTotalElement.textContent = `฿${cartTotal}`;
+            
+            cartItems.innerHTML = '';
+            
+            // Group items by name
+            const groupedItems = {};
+            cart.forEach((salad, index) => {
+                if (groupedItems[salad.name]) {
+                    groupedItems[salad.name].quantity++;
+                    groupedItems[salad.name].totalPrice += salad.price;
+                    groupedItems[salad.name].indices.push(index);
+                } else {
+                    groupedItems[salad.name] = {
+                        quantity: 1,
+                        price: salad.price,
+                        totalPrice: salad.price,
+                        indices: [index]
+                    };
+                }
+            });
+            
+            // Display grouped items
+            Object.entries(groupedItems).forEach(([name, data]) => {
+                const saladElement = document.createElement('div');
+                saladElement.className = 'flex justify-between items-center p-2 bg-gray-50 rounded';
+                saladElement.innerHTML = `
+                    <div class="flex items-center space-x-2 cursor-pointer hover:text-green-primary transition-colors flex-1" onclick="showCartItemDetails('${name}')">
+                        <span class="text-sm">${name}</span>
+                        ${data.quantity > 1 ? `<span class="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded-full">x${data.quantity}</span>` : ''}
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-green-primary font-bold">฿${data.totalPrice}</span>
+                        <button onclick="removeItemGroup('${name}')" class="text-red-500 hover:text-red-700 text-sm">Remove</button>
+                    </div>
+                `;
+                cartItems.appendChild(saladElement);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function removeItemGroup(itemName) {
+            // Remove all items with the specified name
+            cart = cart.filter(item => item.name !== itemName);
+            updateCartDisplay();
+        }
+
+        function showCartItemDetails(itemName) {
+            // Find the product data based on the item name
+            const productData = getProductDataByName(itemName);
+            if (productData) {
+                // Close cart modal first
+                closeCart();
+                // Show product details
+                showProductDetails(
+                    productData.name,
+                    productData.price,
+                    productData.originalPrice,
+                    productData.emoji,
+                    productData.description,
+                    productData.ingredients,
+                    productData.nutrition,
+                    productData.rating,
+                    productData.reviewCount
+                );
+            }
+        }
+
+        function getProductDataByName(name) {
+            // Product database - matches the data from the product cards
+            const products = {
+                'Garden Salad': {
+                    name: 'Garden Salad',
+                    price: 1,
+                    originalPrice: 569,
+                    emoji: '🥗',
+                    description: 'Fresh garden vegetables with mixed greens and house dressing',
+                    ingredients: 'Mixed greens, tomatoes, cucumbers, carrots, bell peppers, house dressing',
+                    nutrition: {calories: '180', protein: '6g', carbs: '12g', fat: '14g'},
+                    rating: 4.6,
+                    reviewCount: 156
+                },
+                'Mix Salad': {
+                    name: 'Mix Salad',
+                    price: 1,
+                    originalPrice: 639,
+                    emoji: '🥬',
+                    description: 'Colorful mix of seasonal greens and vegetables',
+                    ingredients: 'Arugula, spinach, lettuce, cherry tomatoes, red onion, balsamic vinaigrette',
+                    nutrition: {calories: '220', protein: '8g', carbs: '16g', fat: '16g'},
+                    rating: 4.5,
+                    reviewCount: 134
+                },
+                'Green Salad': {
+                    name: 'Green Salad',
+                    price: 1,
+                    originalPrice: 539,
+                    emoji: '🌿',
+                    description: 'Simple and fresh green leafy salad',
+                    ingredients: 'Lettuce, spinach, arugula, cucumber, olive oil, lemon dressing',
+                    nutrition: {calories: '160', protein: '5g', carbs: '10g', fat: '12g'},
+                    rating: 4.4,
+                    reviewCount: 98
+                },
+                'Salmon Salad': {
+                    name: 'Salmon Salad',
+                    price: 1,
+                    originalPrice: 999,
+                    emoji: '🐟',
+                    description: 'Premium grilled salmon over fresh greens',
+                    ingredients: 'Grilled salmon, mixed greens, avocado, cherry tomatoes, lemon herb dressing',
+                    nutrition: {calories: '420', protein: '35g', carbs: '14g', fat: '28g'},
+                    rating: 4.8,
+                    reviewCount: 187
+                },
+                'Chicken Salad': {
+                    name: 'Chicken Salad',
+                    price: 1,
+                    originalPrice: 819,
+                    emoji: '🐔',
+                    description: 'Tender grilled chicken breast with fresh vegetables',
+                    ingredients: 'Grilled chicken, romaine lettuce, tomatoes, cucumbers, ranch dressing',
+                    nutrition: {calories: '380', protein: '32g', carbs: '18g', fat: '22g'},
+                    rating: 4.7,
+                    reviewCount: 203
+                },
+                'Pork Salad': {
+                    name: 'Pork Salad',
+                    price: 1,
+                    originalPrice: 899,
+                    emoji: '🥩',
+                    description: 'Seasoned pork strips over crisp salad greens',
+                    ingredients: 'Seasoned pork, mixed greens, bell peppers, onions, Asian sesame dressing',
+                    nutrition: {calories: '410', protein: '28g', carbs: '20g', fat: '26g'},
+                    rating: 4.6,
+                    reviewCount: 142
+                }
+            };
+            
+            return products[name] || null;
+        }
+
+        function showCartNotification() {
+            // Simple notification - could be enhanced
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-20 right-4 bg-green-primary text-white px-4 py-2 rounded-lg shadow-lg z-50';
+            notification.textContent = 'Salad added to cart!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 2000);
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').classList.add('hidden');
+        }
+
+        // Cart button click handler
+        document.getElementById('cartBtn').addEventListener('click', () => {
+            document.getElementById('cartModal').classList.remove('hidden');
+        });
+
+
+
+        // Close modal when clicking outside
+        document.getElementById('cartModal').addEventListener('click', (e) => {
+            if (e.target.id === 'cartModal') {
+                closeCart();
+            }
+        });
+
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            // If user is not signed in, suggest signing in for faster checkout
+            if (!currentUser) {
+                const shouldSignIn = confirm('Sign in for faster checkout with saved information?\n\nClick OK to sign in, or Cancel to continue as guest.');
+                if (shouldSignIn) {
+                    closeCart();
+                    showSignInModal();
+                    return;
+                }
+            }
+            
+            populateCheckout(cart);
+            closeCart();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function populateCheckout(salads) {
+            const checkoutItems = document.getElementById('checkoutItems');
+            const checkoutTotal = document.getElementById('checkoutTotal');
+            
+            checkoutItems.innerHTML = '';
+            let total = 0;
+            
+            // Group salads by name and count quantities
+            const groupedSalads = {};
+            salads.forEach(salad => {
+                if (groupedSalads[salad.name]) {
+                    groupedSalads[salad.name].quantity++;
+                    groupedSalads[salad.name].totalPrice += salad.price;
+                } else {
+                    groupedSalads[salad.name] = {
+                        quantity: 1,
+                        price: salad.price,
+                        totalPrice: salad.price
+                    };
+                }
+                total += salad.price;
+            });
+            
+            Object.entries(groupedSalads).forEach(([name, data]) => {
+                const saladElement = document.createElement('div');
+                saladElement.className = 'flex justify-between items-center py-2 border-b';
+                saladElement.innerHTML = `
+                    <div>
+                        <span class="font-medium">${name}</span>
+                        <span class="text-gray-500 text-sm ml-2">x${data.quantity}</span>
+                    </div>
+                    <span class="font-bold text-green-primary">฿${data.totalPrice}</span>
+                `;
+                checkoutItems.appendChild(saladElement);
+            });
+            
+            checkoutTotal.textContent = `฿${total}`;
+            
+            // Handle customer information based on sign-in status
+            const firstNameField = document.querySelector('input[placeholder="First Name"]');
+            const lastNameField = document.querySelector('input[placeholder="Last Name"]');
+            const emailField = document.querySelector('input[placeholder="Email Address"]');
+            
+            // Remove any existing signed-in note
+            const existingNote = document.getElementById('signedInNote');
+            if (existingNote) {
+                existingNote.remove();
+            }
+            
+            if (currentUser) {
+                // Auto-fill and lock fields for signed-in users
+                firstNameField.value = currentUser.firstName || '';
+                lastNameField.value = currentUser.lastName || '';
+                emailField.value = currentUser.email || '';
+                
+                [firstNameField, lastNameField, emailField].forEach(field => {
+                    field.readOnly = true;
+                    field.classList.add('bg-green-50', 'border-green-200');
+                    field.classList.remove('focus:ring-2', 'focus:ring-green-primary');
+                });
+                
+                // Add a note about pre-filled information
+                const customerSection = Array.from(document.querySelectorAll('h4')).find(h => h.textContent === 'Customer Information');
+                if (customerSection) {
+                    const note = document.createElement('p');
+                    note.id = 'signedInNote';
+                    note.className = 'text-sm text-green-600 mb-3';
+                    note.innerHTML = '✓ Information auto-filled from your account';
+                    customerSection.parentNode.insertBefore(note, customerSection.nextSibling);
+                }
+            } else {
+                // Clear and enable fields for guest users
+                firstNameField.value = '';
+                lastNameField.value = '';
+                emailField.value = '';
+                
+                [firstNameField, lastNameField, emailField].forEach(field => {
+                    field.readOnly = false;
+                    field.classList.remove('bg-green-50', 'border-green-200');
+                    field.classList.add('focus:ring-2', 'focus:ring-green-primary');
+                });
+            }
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function completeOrder() {
+            // Get payment method selection
+            const selectedPayment = document.querySelector('input[name="payment"]:checked');
+            if (!selectedPayment) {
+                alert('Please select a payment method to continue!');
+                return;
+            }
+            
+            // Get form data
+            const formData = {
+                firstName: document.querySelector('input[placeholder="First Name"]').value.trim(),
+                lastName: document.querySelector('input[placeholder="Last Name"]').value.trim(),
+                email: document.querySelector('input[placeholder="Email Address"]').value.trim(),
+                phone: document.querySelector('input[placeholder="Phone Number"]').value.trim(),
+                address: document.querySelector('input[placeholder="Street Address"]').value.trim(),
+                city: document.querySelector('input[placeholder="City"]').value.trim(),
+                zipCode: document.querySelector('input[placeholder="ZIP Code"]').value.trim(),
+                paymentMethod: selectedPayment.value
+            };
+            
+            // Basic validation - only require payment method for demo
+            if (!formData.paymentMethod) {
+                alert('Please select a payment method!');
+                return;
+            }
+            
+            // Optional email validation if provided
+            if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+                if (!confirm('Email format appears invalid. Continue anyway?')) {
+                    return;
+                }
+            }
+            
+            // Show loading state
+            const completeBtn = document.querySelector('button[onclick="completeOrder()"]');
+            const originalText = completeBtn.textContent;
+            completeBtn.textContent = 'Processing...';
+            completeBtn.disabled = true;
+            
+            // Process payment
+            setTimeout(() => {
+                processPayment(formData.paymentMethod, formData);
+                completeBtn.textContent = originalText;
+                completeBtn.disabled = false;
+            }, 1000);
+        }
+        
+        function processPayment(paymentMethod, customerData) {
+            const paymentMethods = {
+                // Mobile Banking
+                'kbank': { name: 'K PLUS', color: 'green', icon: '🏦', steps: ['Opening K PLUS app...', 'Authenticating...', 'Processing payment...'] },
+                'scb': { name: 'SCB Easy', color: 'purple', icon: '🏦', steps: ['Connecting to SCB...', 'Verifying account...', 'Completing transaction...'] },
+                'bbl': { name: 'Bualuang', color: 'blue', icon: '🏦', steps: ['Loading Bualuang...', 'Security check...', 'Payment processing...'] },
+                'ktb': { name: 'Krungthai', color: 'red', icon: '🏦', steps: ['Opening KTB app...', 'Authentication...', 'Finalizing payment...'] },
+                'bay': { name: 'Krungsri', color: 'yellow', icon: '🏦', steps: ['Connecting to Krungsri...', 'Verifying details...', 'Processing...'] },
+                'tmb': { name: 'TMB Touch', color: 'indigo', icon: '🏦', steps: ['Loading TMB Touch...', 'Security verification...', 'Payment complete...'] },
+                'gsb': { name: 'GSB', color: 'pink', icon: '🏦', steps: ['Opening GSB app...', 'Account verification...', 'Transaction processing...'] },
+                'uob': { name: 'UOB Mighty', color: 'blue', icon: '🏦', steps: ['Connecting to UOB...', 'Authentication...', 'Payment processing...'] },
+                
+                // E-Wallets & Digital Payments
+                'truemoney': { name: 'TrueMoney Wallet', color: 'red', icon: '💰', steps: ['Opening TrueMoney...', 'Wallet verification...', 'Payment processing...'] },
+                'rabbit': { name: 'Rabbit LINE Pay', color: 'green', icon: '🐰', steps: ['Connecting to LINE...', 'Rabbit Pay verification...', 'Transaction complete...'] },
+                'airpay': { name: 'AirPay', color: 'blue', icon: '✈️', steps: ['Loading AirPay...', 'Account check...', 'Processing payment...'] },
+                'shopeepay': { name: 'ShopeePay', color: 'orange', icon: '🛒', steps: ['Opening Shopee...', 'Wallet verification...', 'Payment complete...'] },
+                'grabpay': { name: 'GrabPay', color: 'green', icon: '🚗', steps: ['Connecting to Grab...', 'Payment verification...', 'Transaction processing...'] },
+                'foodpanda': { name: 'foodpanda Pay', color: 'pink', icon: '🐼', steps: ['Opening foodpanda...', 'Wallet check...', 'Payment processing...'] },
+                'lineman': { name: 'LINE MAN Wallet', color: 'green', icon: '🛵', steps: ['Connecting to LINE MAN...', 'Wallet verification...', 'Payment complete...'] },
+                'bluepay': { name: 'Blue Pay', color: 'blue', icon: '💙', steps: ['Loading Blue Pay...', 'Account verification...', 'Processing payment...'] },
+                
+                // International Digital Wallets
+                'paypal': { name: 'PayPal', color: 'blue', icon: '💙', steps: ['Connecting to PayPal...', 'Account verification...', 'Payment processing...'] },
+                'googlepay': { name: 'Google Pay', color: 'green', icon: '🟢', steps: ['Opening Google Pay...', 'Authentication...', 'Transaction complete...'] },
+                'applepay': { name: 'Apple Pay', color: 'gray', icon: '🍎', steps: ['Connecting to Apple Pay...', 'Touch ID verification...', 'Payment processing...'] },
+                'alipay': { name: 'Alipay', color: 'blue', icon: '🅰️', steps: ['Opening Alipay...', 'Account verification...', 'Payment complete...'] },
+                'wechatpay': { name: 'WeChat Pay', color: 'green', icon: '💬', steps: ['Connecting to WeChat...', 'Payment verification...', 'Transaction processing...'] },
+                'samsung': { name: 'Samsung Pay', color: 'blue', icon: '📱', steps: ['Opening Samsung Pay...', 'Biometric verification...', 'Payment complete...'] },
+                
+                // QR Code Payments
+                'promptpay': { name: 'PromptPay', color: 'blue', icon: '📱', steps: ['Generating QR code...', 'Waiting for scan...', 'Payment confirmed...'] },
+                'thaiQR': { name: 'Thai QR Payment', color: 'purple', icon: '🇹🇭', steps: ['Creating Thai QR...', 'Bank verification...', 'Payment processing...'] },
+                'paynow': { name: 'PayNow', color: 'red', icon: '🇸🇬', steps: ['Generating PayNow QR...', 'Bank connection...', 'Transaction complete...'] },
+                'duitnow': { name: 'DuitNow', color: 'blue', icon: '🇲🇾', steps: ['Creating DuitNow QR...', 'Bank verification...', 'Payment processing...'] },
+                
+                // Cryptocurrency
+                'bitcoin': { name: 'Bitcoin', color: 'orange', icon: '₿', steps: ['Connecting to blockchain...', 'Wallet verification...', 'Mining confirmation...'] },
+                'ethereum': { name: 'Ethereum', color: 'blue', icon: '⟠', steps: ['Connecting to Ethereum...', 'Smart contract execution...', 'Transaction confirmed...'] },
+                'usdt': { name: 'USDT', color: 'green', icon: '₮', steps: ['Connecting to Tether...', 'Wallet verification...', 'Stablecoin transfer...'] },
+                'binance': { name: 'Binance Pay', color: 'yellow', icon: '🔶', steps: ['Opening Binance...', 'Account verification...', 'Crypto payment...'] },
+                
+                // Buy Now Pay Later
+                'atome': { name: 'Atome', color: 'green', icon: '🟢', steps: ['Connecting to Atome...', 'Credit check...', 'Installment setup...'] },
+                'tendopay': { name: 'TendoPay', color: 'blue', icon: '💳', steps: ['Opening TendoPay...', 'Credit verification...', 'Payment plan created...'] },
+                'billease': { name: 'Billease', color: 'purple', icon: '📱', steps: ['Connecting to Billease...', 'Account verification...', 'Installment approved...'] },
+                'kredivo': { name: 'Kredivo', color: 'red', icon: '💰', steps: ['Opening Kredivo...', 'Credit assessment...', 'Payment plan active...'] },
+                
+                // Traditional Methods
+                'visa': { name: 'Visa', color: 'blue', icon: '💳', steps: ['Processing Visa card...', 'Bank authorization...', 'Payment approved...'] },
+                'mastercard': { name: 'Mastercard', color: 'red', icon: '💳', steps: ['Processing Mastercard...', 'Security verification...', 'Transaction complete...'] },
+                'amex': { name: 'American Express', color: 'blue', icon: '💳', steps: ['Processing Amex card...', 'Account verification...', 'Payment authorized...'] },
+                'jcb': { name: 'JCB', color: 'green', icon: '💳', steps: ['Processing JCB card...', 'Bank connection...', 'Payment complete...'] },
+                'cash': { name: 'Cash on Delivery', color: 'green', icon: '💵', steps: ['Order confirmed...', 'Preparing for delivery...', 'Cash payment on arrival...'] },
+                'transfer': { name: 'Bank Transfer', color: 'blue', icon: '🏧', steps: ['Generating transfer details...', 'Awaiting bank transfer...', 'Payment confirmed...'] },
+                'installment': { name: 'Installment Plan', color: 'purple', icon: '📅', steps: ['Setting up installments...', 'Credit approval...', 'Payment plan active...'] },
+                'counter': { name: 'Counter Service', color: 'gray', icon: '🏪', steps: ['Generating payment code...', 'Visit counter service...', 'Payment confirmed...'] }
+            };
+            
+            const method = paymentMethods[paymentMethod] || { name: 'Unknown Payment', color: 'gray', icon: '❓', steps: ['Processing...', 'Verifying...', 'Complete...'] };
+            
+            // Show payment processing modal
+            showPaymentProcessing(method, customerData);
+        }
+        
+        function showPaymentProcessing(method, customerData) {
+            // Create payment processing modal
+            const processingModal = document.createElement('div');
+            processingModal.id = 'paymentProcessingModal';
+            processingModal.className = 'fixed inset-0 bg-black bg-opacity-50 z-60';
+            
+            const totalAmount = document.getElementById('checkoutTotal').textContent;
+            const customerName = customerData.firstName && customerData.lastName ? 
+                `${customerData.firstName} ${customerData.lastName}` : 'Customer';
+            
+            processingModal.innerHTML = `
+                <div class="flex items-center justify-center min-h-screen p-4">
+                    <div class="bg-white rounded-lg max-w-md w-full p-6 text-center">
+                        <div class="text-6xl mb-4">${method.icon}</div>
+                        <h3 class="text-2xl font-bold mb-2">Processing Payment</h3>
+                        <p class="text-gray-600 mb-4">Using <strong>${method.name}</strong></p>
+                        
+                        <!-- Customer Info -->
+                        <div class="bg-gray-50 p-3 rounded-lg mb-4 text-left">
+                            <div class="text-sm text-gray-600">
+                                <div><strong>Customer:</strong> ${customerName}</div>
+                                ${customerData.email ? `<div><strong>Email:</strong> ${customerData.email}</div>` : ''}
+                                <div><strong>Amount:</strong> <span class="text-green-primary font-bold">${totalAmount}</span></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Steps -->
+                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                            <div id="paymentSteps" class="space-y-2">
+                                ${method.steps.map((step, index) => `
+                                    <div id="step-${index}" class="flex items-center text-sm">
+                                        <div class="w-4 h-4 rounded-full border-2 border-gray-300 mr-3 flex items-center justify-center">
+                                            <div class="w-2 h-2 rounded-full bg-gray-300 hidden step-dot"></div>
+                                        </div>
+                                        <span class="text-gray-500">${step}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            
+                            <!-- Progress Bar -->
+                            <div class="mt-4">
+                                <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                                    <div id="progressBar" class="bg-green-primary h-full transition-all duration-1000" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    <span id="progressText">Initializing...</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="space-y-2">
+                            <button id="completePaymentBtn" onclick="simulatePaymentSuccess()" class="w-full bg-green-primary text-white py-3 rounded-lg hover:bg-green-secondary transition-colors font-bold" style="display: none;">
+                                Complete Payment
+                            </button>
+                            <button onclick="cancelPayment()" class="w-full bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition-colors">
+                                Cancel Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(processingModal);
+            closeCheckout();
+            
+            // Start the payment simulation
+            simulatePaymentSteps(method.steps);
+        }
+        
+        function simulatePaymentSteps(steps) {
+            let currentStep = 0;
+            const totalSteps = steps.length;
+            
+            function processNextStep() {
+                if (currentStep < totalSteps) {
+                    // Update current step
+                    const stepElement = document.getElementById(`step-${currentStep}`);
+                    if (stepElement) {
+                        const dot = stepElement.querySelector('.step-dot');
+                        const text = stepElement.querySelector('span');
+                        
+                        // Activate current step
+                        dot.classList.remove('hidden', 'bg-gray-300');
+                        dot.classList.add('bg-green-primary');
+                        text.classList.remove('text-gray-500');
+                        text.classList.add('text-green-primary', 'font-medium');
+                        
+                        // Update progress bar
+                        const progress = ((currentStep + 1) / totalSteps) * 100;
+                        document.getElementById('progressBar').style.width = `${progress}%`;
+                        document.getElementById('progressText').textContent = steps[currentStep];
+                    }
+                    
+                    currentStep++;
+                    
+                    // Continue to next step after delay
+                    setTimeout(processNextStep, 1500);
+                } else {
+                    // All steps completed
+                    document.getElementById('progressText').textContent = 'Payment ready to complete!';
+                    document.getElementById('completePaymentBtn').style.display = 'block';
+                    
+                    // Auto-complete after 2 seconds
+                    setTimeout(() => {
+                        if (document.getElementById('paymentProcessingModal')) {
+                            simulatePaymentSuccess();
+                        }
+                    }, 2000);
+                }
+            }
+            
+            // Start processing
+            setTimeout(processNextStep, 500);
+        }
+        
+        function simulatePaymentSuccess() {
+            // Remove processing modal
+            const processingModal = document.getElementById('paymentProcessingModal');
+            if (processingModal) {
+                document.body.removeChild(processingModal);
+            }
+            
+            // Generate random order number
+            const orderNumber = Math.floor(Math.random() * 90000) + 10000;
+            document.getElementById('orderNumber').textContent = orderNumber;
+            
+            // Track purchased products for review eligibility
+            cart.forEach(salad => {
+                if (!purchasedProducts.includes(salad.name)) {
+                    purchasedProducts.push(salad.name);
+                }
+            });
+            localStorage.setItem('purchasedProducts', JSON.stringify(purchasedProducts));
+            
+            // Clear cart
+            cart = [];
+            updateCartDisplay();
+            
+            // Show success modal
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+        
+        function cancelPayment() {
+            // Remove processing modal
+            const processingModal = document.getElementById('paymentProcessingModal');
+            if (processingModal) {
+                document.body.removeChild(processingModal);
+            }
+            
+            // Return to checkout
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeSuccess() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // Close product modal when clicking outside
+        document.getElementById('productModal').addEventListener('click', (e) => {
+            if (e.target.id === 'productModal') {
+                closeProductModal();
+            }
+        });
+
+        // Close checkout modal when clicking outside
+        document.getElementById('checkoutModal').addEventListener('click', (e) => {
+            if (e.target.id === 'checkoutModal') {
+                closeCheckout();
+            }
+        });
+
+        // Close success modal when clicking outside
+        document.getElementById('successModal').addEventListener('click', (e) => {
+            if (e.target.id === 'successModal') {
+                closeSuccess();
+            }
+        });
+        
+        // Authentication Functions
+        function showSignInModal() {
+            closeAllModals();
+            document.getElementById('signInModal').classList.remove('hidden');
+        }
+        
+        function closeSignInModal() {
+            document.getElementById('signInModal').classList.add('hidden');
+        }
+        
+        function showSignUpModal() {
+            closeAllModals();
+            document.getElementById('signUpModal').classList.remove('hidden');
+        }
+        
+        function closeSignUpModal() {
+            document.getElementById('signUpModal').classList.add('hidden');
+        }
+        
+        function showForgotPassword() {
+            closeAllModals();
+            document.getElementById('forgotPasswordModal').classList.remove('hidden');
+        }
+        
+        function closeForgotPasswordModal() {
+            document.getElementById('forgotPasswordModal').classList.add('hidden');
+        }
+        
+        function closeAllModals() {
+            document.getElementById('signInModal').classList.add('hidden');
+            document.getElementById('signUpModal').classList.add('hidden');
+            document.getElementById('forgotPasswordModal').classList.add('hidden');
+        }
+        
+        // Password visibility toggles
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('signInPassword');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = '<path d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 11-4.243-4.243m4.242 4.242L9.88 9.88"/>';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = '<path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>';
+            }
+        }
+        
+        function toggleSignUpPasswordVisibility() {
+            const passwordInput = document.getElementById('signUpPassword');
+            const eyeIcon = document.getElementById('signUpEyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = '<path d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 11-4.243-4.243m4.242 4.242L9.88 9.88"/>';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = '<path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>';
+            }
+        }
+        
+        // Social Sign In Functions
+        function signInWithGoogle() {
+            showLoadingState('signInWithGoogle', 'Connecting to Google...');
+            
+            // Simulate Google OAuth flow
+            setTimeout(() => {
+                const userData = {
+                    id: 'google_' + Date.now(),
+                    email: 'user@gmail.com',
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    provider: 'google',
+                    avatar: 'https://via.placeholder.com/40'
+                };
+                
+                completeSignIn(userData);
+                resetButtonState('signInWithGoogle', 'Continue with Google');
+            }, 2000);
+        }
+        
+        function signInWithApple() {
+            showLoadingState('signInWithApple', 'Connecting to Apple...');
+            
+            // Simulate Apple Sign In flow
+            setTimeout(() => {
+                const userData = {
+                    id: 'apple_' + Date.now(),
+                    email: 'user@icloud.com',
+                    firstName: 'Jane',
+                    lastName: 'Smith',
+                    provider: 'apple',
+                    avatar: 'https://via.placeholder.com/40'
+                };
+                
+                completeSignIn(userData);
+                resetButtonState('signInWithApple', 'Continue with Apple');
+            }, 2000);
+        }
+        
+
+        
+        // Sign-Up Functions (mirror sign-in functions)
+        function signUpWithGoogle() {
+            showLoadingState('signUpWithGoogle', 'Creating account with Google...');
+            
+            setTimeout(() => {
+                const userData = {
+                    id: 'google_' + Date.now(),
+                    email: 'newuser@gmail.com',
+                    firstName: 'New',
+                    lastName: 'User',
+                    provider: 'google',
+                    avatar: 'https://via.placeholder.com/40'
+                };
+                
+                completeSignUp(userData);
+                resetButtonState('signUpWithGoogle', 'Sign up with Google');
+            }, 2000);
+        }
+        
+        function signUpWithApple() {
+            showLoadingState('signUpWithApple', 'Creating account with Apple...');
+            
+            setTimeout(() => {
+                const userData = {
+                    id: 'apple_' + Date.now(),
+                    email: 'newuser@icloud.com',
+                    firstName: 'Apple',
+                    lastName: 'User',
+                    provider: 'apple',
+                    avatar: 'https://via.placeholder.com/40'
+                };
+                
+                completeSignUp(userData);
+                resetButtonState('signUpWithApple', 'Sign up with Apple');
+            }, 2000);
+        }
+        
+
+        
+        // Helper Functions for Provider Authentication
+        function simulateProviderSignIn(provider, providerName, email, firstName, lastName) {
+            const buttonId = `signInWith${providerName.replace(/\s+/g, '')}`;
+            showLoadingState(buttonId, `Connecting to ${providerName}...`);
+            
+            // Create realistic authentication flow
+            showProviderAuthFlow(provider, providerName, false, () => {
+                const userData = {
+                    id: provider + '_' + Date.now(),
+                    email: email,
+                    firstName: firstName,
+                    lastName: lastName,
+                    provider: provider,
+                    avatar: generateAvatar(firstName, lastName),
+                    lastLogin: new Date().toISOString(),
+                    preferences: generateUserPreferences(provider)
+                };
+                
+                completeSignIn(userData);
+                resetButtonState(buttonId, providerName);
+            });
+        }
+        
+        function simulateProviderSignUp(provider, providerName, email, firstName, lastName) {
+            const buttonId = `signUpWith${providerName.replace(/\s+/g, '')}`;
+            showLoadingState(buttonId, `Creating account with ${providerName}...`);
+            
+            // Create realistic registration flow
+            showProviderAuthFlow(provider, providerName, true, () => {
+                const userData = {
+                    id: provider + '_' + Date.now(),
+                    email: email,
+                    firstName: firstName,
+                    lastName: lastName,
+                    provider: provider,
+                    avatar: generateAvatar(firstName, lastName),
+                    createdAt: new Date().toISOString(),
+                    preferences: generateUserPreferences(provider),
+                    isNewUser: true
+                };
+                
+                completeSignUp(userData);
+                resetButtonState(buttonId, providerName);
+            });
+        }
+        
+        // Generate realistic user avatars
+        function generateAvatar(firstName, lastName) {
+            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const initials = `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase();
+            
+            return `data:image/svg+xml,${encodeURIComponent(`
+                <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="20" fill="${color}"/>
+                    <text x="20" y="26" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">${initials}</text>
+                </svg>
+            `)}`;
+        }
+        
+        // Generate user preferences based on provider
+        function generateUserPreferences(provider) {
+            const preferences = {
+                theme: 'light',
+                notifications: true,
+                newsletter: Math.random() > 0.5,
+                language: 'en'
+            };
+            
+            // Provider-specific preferences
+            switch(provider) {
+                case 'google':
+                    preferences.syncWithGoogle = true;
+                    break;
+                case 'apple':
+                    preferences.applePayEnabled = true;
+                    break;
+                case 'facebook':
+                    preferences.shareToFacebook = true;
+                    break;
+                case 'github':
+                    preferences.theme = 'dark';
+                    break;
+                case 'spotify':
+                    preferences.musicIntegration = true;
+                    break;
+                case 'discord':
+                    preferences.theme = 'dark';
+                    preferences.gamingMode = true;
+                    break;
+            }
+            
+            return preferences;
+        }
+        
+        // Show realistic provider authentication flow
+        function showProviderAuthFlow(provider, providerName, isSignUp, callback) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-60';
+            modal.id = 'providerAuthModal';
+            
+            const steps = getProviderSteps(provider, providerName, isSignUp);
+            
+            modal.innerHTML = `
+                <div class="flex items-center justify-center min-h-screen p-4">
+                    <div class="bg-white rounded-lg max-w-md w-full p-6">
+                        <div class="text-center mb-6">
+                            <div class="text-4xl mb-3">${getProviderIcon(provider)}</div>
+                            <h3 class="text-xl font-bold">${isSignUp ? 'Creating Account' : 'Signing In'}</h3>
+                            <p class="text-gray-600">with ${providerName}</p>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            ${steps.map((step, index) => `
+                                <div id="step-${index}" class="flex items-center p-3 rounded-lg border transition-all duration-300">
+                                    <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex items-center justify-center">
+                                        <div class="w-3 h-3 rounded-full bg-gray-300 hidden step-indicator"></div>
+                                    </div>
+                                    <span class="text-gray-600">${step}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Progress:</span>
+                                <span id="progressPercent" class="font-medium">0%</span>
+                            </div>
+                            <div class="mt-2 bg-gray-200 h-2 rounded-full overflow-hidden">
+                                <div id="authProgressBar" class="bg-green-primary h-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button onclick="cancelProviderAuth()" class="text-gray-500 hover:text-gray-700 text-sm">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Start the authentication process
+            processProviderSteps(steps, callback);
+        }
+        
+        // Get provider-specific authentication steps
+        function getProviderSteps(provider, providerName, isSignUp) {
+            const baseSteps = isSignUp ? 
+                ['Connecting to ' + providerName, 'Verifying permissions', 'Creating account', 'Setting up profile'] :
+                ['Connecting to ' + providerName, 'Authenticating user', 'Retrieving profile', 'Completing sign in'];
+            
+            const providerSpecificSteps = {
+                'google': isSignUp ? 
+                    ['Connecting to Google', 'OAuth 2.0 authorization', 'Google account verification', 'Creating Antz\'s Garden profile', 'Syncing Google data'] :
+                    ['Connecting to Google', 'OAuth 2.0 authentication', 'Verifying Google account', 'Retrieving user profile', 'Completing sign in'],
+                'apple': isSignUp ?
+                    ['Connecting to Apple ID', 'Face ID / Touch ID verification', 'Apple account verification', 'Creating secure profile', 'Enabling Apple Pay integration'] :
+                    ['Connecting to Apple ID', 'Biometric authentication', 'Verifying Apple account', 'Retrieving user data', 'Completing sign in'],
+                'facebook': isSignUp ?
+                    ['Connecting to Facebook', 'App permissions request', 'Facebook profile verification', 'Creating social profile', 'Setting privacy preferences'] :
+                    ['Connecting to Facebook', 'Facebook authentication', 'Verifying social profile', 'Retrieving friend data', 'Completing sign in'],
+                'github': isSignUp ?
+                    ['Connecting to GitHub', 'OAuth app authorization', 'Developer account verification', 'Creating developer profile', 'Syncing repositories'] :
+                    ['Connecting to GitHub', 'OAuth authentication', 'Verifying developer account', 'Retrieving GitHub profile', 'Completing sign in'],
+                'discord': isSignUp ?
+                    ['Connecting to Discord', 'Bot authorization', 'Gaming profile verification', 'Creating gamer profile', 'Setting up gaming preferences'] :
+                    ['Connecting to Discord', 'Discord authentication', 'Verifying gaming profile', 'Retrieving server data', 'Completing sign in'],
+                'spotify': isSignUp ?
+                    ['Connecting to Spotify', 'Music app authorization', 'Spotify account verification', 'Creating music profile', 'Syncing playlists'] :
+                    ['Connecting to Spotify', 'Spotify authentication', 'Verifying music account', 'Retrieving music data', 'Completing sign in'],
+                'wechat': isSignUp ?
+                    ['Connecting to WeChat', 'QR code generation', 'WeChat app verification', 'Creating social profile', 'Setting up WeChat Pay'] :
+                    ['Connecting to WeChat', 'QR code authentication', 'Verifying WeChat account', 'Retrieving social data', 'Completing sign in'],
+                'line': isSignUp ?
+                    ['Connecting to LINE', 'LINE app authorization', 'Account verification', 'Creating LINE profile', 'Setting up LINE Pay'] :
+                    ['Connecting to LINE', 'LINE authentication', 'Verifying LINE account', 'Retrieving profile data', 'Completing sign in']
+            };
+            
+            return providerSpecificSteps[provider] || baseSteps;
+        }
+        
+        // Get provider icon
+        function getProviderIcon(provider) {
+            const icons = {
+                'google': '🔍', 'apple': '🍎', 'facebook': '📘', 'twitter': '🐦', 'linkedin': '💼',
+                'github': '🐙', 'line': '💬', 'whatsapp': '📱', 'telegram': '✈️', 'discord': '🎮',
+                'slack': '💼', 'skype': '📞', 'steam': '🎮', 'twitch': '📺', 'spotify': '🎵',
+                'youtube': '📹', 'wechat': '💬', 'kakao': '💬', 'naver': '🔍', 'microsoft': '🪟',
+                'zoom': '📹', 'faceid': '👤', 'fingerprint': '👆', 'qr': '📱', 'nfc': '📡'
+            };
+            return icons[provider] || '🔐';
+        }
+        
+        // Process authentication steps
+        function processProviderSteps(steps, callback) {
+            let currentStep = 0;
+            
+            function processNextStep() {
+                if (currentStep < steps.length) {
+                    // Update UI for current step
+                    const stepElement = document.getElementById(`step-${currentStep}`);
+                    if (stepElement) {
+                        // Activate current step
+                        stepElement.classList.add('bg-green-50', 'border-green-200');
+                        const indicator = stepElement.querySelector('.step-indicator');
+                        const text = stepElement.querySelector('span');
+                        
+                        indicator.classList.remove('hidden', 'bg-gray-300');
+                        indicator.classList.add('bg-green-primary');
+                        text.classList.remove('text-gray-600');
+                        text.classList.add('text-green-700', 'font-medium');
+                        
+                        // Update progress
+                        const progress = ((currentStep + 1) / steps.length) * 100;
+                        document.getElementById('authProgressBar').style.width = `${progress}%`;
+                        document.getElementById('progressPercent').textContent = `${Math.round(progress)}%`;
+                    }
+                    
+                    currentStep++;
+                    
+                    // Random delay between 800-2000ms for realism
+                    const delay = Math.random() * 1200 + 800;
+                    setTimeout(processNextStep, delay);
+                } else {
+                    // All steps completed
+                    setTimeout(() => {
+                        const modal = document.getElementById('providerAuthModal');
+                        if (modal) {
+                            document.body.removeChild(modal);
+                        }
+                        callback();
+                    }, 500);
+                }
+            }
+            
+            // Start processing
+            setTimeout(processNextStep, 500);
+        }
+        
+        // Cancel provider authentication
+        function cancelProviderAuth() {
+            const modal = document.getElementById('providerAuthModal');
+            if (modal) {
+                document.body.removeChild(modal);
+            }
+            
+            // Reset any loading states
+            const buttons = document.querySelectorAll('button[disabled]');
+            buttons.forEach(button => {
+                button.disabled = false;
+                // Reset button text based on context
+                if (button.textContent.includes('Connecting') || button.textContent.includes('Creating')) {
+                    const originalText = button.getAttribute('data-original-text') || 
+                        button.textContent.replace(/Connecting to |Creating account with /, '');
+                    button.textContent = originalText;
+                }
+            });
+        }
+        
+
+        
+        function createBiometricModal(method, icon, message, isSignUp) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-60';
+            modal.innerHTML = `
+                <div class="flex items-center justify-center min-h-screen p-4">
+                    <div class="bg-white rounded-lg max-w-sm w-full p-6 text-center">
+                        <div class="text-6xl mb-4 animate-pulse">${icon}</div>
+                        <h3 class="text-xl font-bold mb-2">${method} ${isSignUp ? 'Registration' : 'Authentication'}</h3>
+                        <p class="text-gray-600 mb-4">${message}</p>
+                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                            <div class="animate-pulse">
+                                <div class="h-2 bg-green-primary rounded mb-2"></div>
+                                <div class="h-2 bg-green-primary rounded w-3/4 mb-2"></div>
+                                <div class="h-2 bg-green-primary rounded w-1/2"></div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500">${isSignUp ? 'Registering your biometric data...' : 'Scanning...'}</p>
+                    </div>
+                </div>
+            `;
+            return modal;
+        }
+        
+
+        
+        // Email/Password Authentication
+        function signInWithEmail(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('signInEmail').value;
+            const password = document.getElementById('signInPassword').value;
+            
+            // Basic validation
+            if (!email || !password) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            showLoadingState('signInForm', 'Signing in...');
+            
+            // Simulate email sign in
+            setTimeout(() => {
+                // Check if user exists in localStorage
+                const users = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+                const user = users[email];
+                
+                if (user && user.password === password) {
+                    // Check if user is verified (for email accounts)
+                    if (user.provider === 'email' && !user.isVerified) {
+                        showNotification('Please verify your email address first', 'error');
+                        resetFormState('signInForm', 'Sign In');
+                        
+                        // Generate new verification code and show verification modal
+                        const verificationCode = generateVerificationCode();
+                        const verificationExpiry = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+                        
+                        users[email].verificationCode = verificationCode;
+                        users[email].verificationExpiry = verificationExpiry;
+                        localStorage.setItem('registeredUsers', JSON.stringify(users));
+                        
+                        showEmailVerificationModal(users[email]);
+                        return;
+                    }
+                    
+                    // Generate sign-in verification code
+                    const signInCode = generateVerificationCode();
+                    const signInExpiry = new Date(Date.now() + 10 * 60 * 1000).toISOString(); // 10 minutes for sign-in
+                    
+                    // Update user with sign-in verification code
+                    users[email].signInVerificationCode = signInCode;
+                    users[email].signInVerificationExpiry = signInExpiry;
+                    localStorage.setItem('registeredUsers', JSON.stringify(users));
+                    
+                    // Show sign-in verification modal
+                    showSignInVerificationModal(users[email]);
+                } else {
+                    // More helpful error message
+                    if (!user) {
+                        showNotification('No account found with this email. Please sign up first!', 'error');
+                    } else {
+                        showNotification('Incorrect password. Try again or reset your password.', 'error');
+                    }
+                }
+                
+                resetFormState('signInForm', 'Sign In');
+            }, 1500);
+        }
+        
+        function signUpWithEmail(event) {
+            event.preventDefault();
+            
+            const firstName = document.getElementById('signUpFirstName').value;
+            const lastName = document.getElementById('signUpLastName').value;
+            const email = document.getElementById('signUpEmail').value;
+            const password = document.getElementById('signUpPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            
+            // Validation
+            if (!firstName || !lastName || !email || !password || !confirmPassword) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (password.length < 8) {
+                showNotification('Password must be at least 8 characters long', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match', 'error');
+                return;
+            }
+            
+
+            
+            showLoadingState('signUpForm', 'Creating account...');
+            
+            // Simulate account creation
+            setTimeout(() => {
+                // Check if user already exists
+                const users = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+                
+                if (users[email]) {
+                    showNotification('An account with this email already exists', 'error');
+                    resetFormState('signUpForm', 'Create Account');
+                    return;
+                }
+                
+                // Create new user with unverified status
+                const verificationCode = generateVerificationCode();
+                const userData = {
+                    id: 'email_' + Date.now(),
+                    email,
+                    firstName,
+                    lastName,
+                    password,
+                    provider: 'email',
+                    avatar: generateAvatar(firstName, lastName),
+                    createdAt: new Date().toISOString(),
+                    isVerified: false,
+                    verificationCode: verificationCode,
+                    verificationExpiry: new Date(Date.now() + 15 * 60 * 1000).toISOString() // 15 minutes
+                };
+                
+                // Save user to localStorage
+                users[email] = userData;
+                localStorage.setItem('registeredUsers', JSON.stringify(users));
+                
+                // Show email verification modal instead of completing signup
+                showEmailVerificationModal(userData);
+                resetFormState('signUpForm', 'Create Account');
+            }, 2000);
+        }
+        
+        function sendPasswordReset(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('resetEmail').value;
+            
+            if (!email) {
+                showNotification('Please enter your email address', 'error');
+                return;
+            }
+            
+            showLoadingState('forgotPasswordForm', 'Sending reset link...');
+            
+            // Simulate password reset
+            setTimeout(() => {
+                showNotification('Password reset link sent to your email!', 'success');
+                closeForgotPasswordModal();
+                resetFormState('forgotPasswordForm', 'Send Reset Link');
+            }, 2000);
+        }
+        
+        // Email Verification Functions
+        let verificationTimer;
+        let signInVerificationTimer;
+        let currentVerificationUser = null;
+        let currentSignInUser = null;
+        
+        function generateVerificationCode() {
+            return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+        
+        function showEmailVerificationModal(userData) {
+            currentVerificationUser = userData;
+            closeAllModals();
+            
+            document.getElementById('verificationEmail').textContent = userData.email;
+            document.getElementById('demoCode').textContent = userData.verificationCode;
+            document.getElementById('emailVerificationModal').classList.remove('hidden');
+            
+            // Clear all code inputs
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById(`code${i}`).value = '';
+            }
+            
+            // Focus first input
+            document.getElementById('code1').focus();
+            
+            // Start countdown timer
+            startVerificationTimer();
+        }
+        
+        function showSignInVerificationModal(userData) {
+            currentSignInUser = userData;
+            closeAllModals();
+            
+            document.getElementById('signInVerificationEmail').textContent = userData.email;
+            document.getElementById('signInDemoCode').textContent = userData.signInVerificationCode;
+            document.getElementById('signInVerificationModal').classList.remove('hidden');
+            
+            // Clear all code inputs
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById(`signInCode${i}`).value = '';
+            }
+            
+            // Focus first input
+            document.getElementById('signInCode1').focus();
+            
+            // Start countdown timer (10 minutes for sign-in)
+            startSignInVerificationTimer();
+        }
+        
+        function startVerificationTimer() {
+            let timeLeft = 15 * 60; // 15 minutes in seconds
+            
+            verificationTimer = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                document.getElementById('verificationTimer').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(verificationTimer);
+                    showNotification('Verification code has expired. Please request a new one.', 'error');
+                    document.getElementById('verificationTimer').textContent = 'Expired';
+                    document.getElementById('verificationTimer').classList.add('text-red-600');
+                }
+                
+                timeLeft--;
+            }, 1000);
+        }
+        
+        function startSignInVerificationTimer() {
+            let timeLeft = 10 * 60; // 10 minutes in seconds
+            
+            signInVerificationTimer = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                document.getElementById('signInVerificationTimer').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(signInVerificationTimer);
+                    showNotification('Sign-in code has expired. Please try signing in again.', 'error');
+                    document.getElementById('signInVerificationTimer').textContent = 'Expired';
+                    document.getElementById('signInVerificationTimer').classList.add('text-red-600');
+                }
+                
+                timeLeft--;
+            }, 1000);
+        }
+        
+        function moveToNext(current, nextId) {
+            if (current.value.length === 1) {
+                const nextInput = document.getElementById(nextId);
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            }
+            
+            // Auto-verify when all 6 digits are entered
+            if (nextId === null || nextId === undefined) {
+                setTimeout(verifyCode, 100);
+            }
+        }
+        
+        function moveToNextSignIn(current, nextId) {
+            if (current.value.length === 1) {
+                const nextInput = document.getElementById(nextId);
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            }
+            
+            // Auto-verify when all 6 digits are entered
+            if (nextId === null || nextId === undefined) {
+                setTimeout(verifySignInCode, 100);
+            }
+        }
+        
+        function verifyCode() {
+            let code = '';
+            for (let i = 1; i <= 6; i++) {
+                const input = document.getElementById(`code${i}`);
+                if (input.value.length !== 1) {
+                    return; // Not all digits entered
+                }
+                code += input.value;
+            }
+            
+            if (code.length === 6) {
+                verifyEmailCode();
+            }
+        }
+        
+        function verifySignInCode() {
+            let code = '';
+            for (let i = 1; i <= 6; i++) {
+                const input = document.getElementById(`signInCode${i}`);
+                if (input.value.length !== 1) {
+                    return; // Not all digits entered
+                }
+                code += input.value;
+            }
+            
+            if (code.length === 6) {
+                verifySignInEmailCode();
+            }
+        }
+        
+        function verifyEmailCode() {
+            let enteredCode = '';
+            for (let i = 1; i <= 6; i++) {
+                enteredCode += document.getElementById(`code${i}`).value;
+            }
+            
+            if (enteredCode.length !== 6) {
+                showNotification('Please enter the complete 6-digit code', 'error');
+                return;
+            }
+            
+            if (!currentVerificationUser) {
+                showNotification('Verification session expired. Please sign up again.', 'error');
+                closeEmailVerificationModal();
+                return;
+            }
+            
+            // Check if code has expired
+            const now = new Date();
+            const expiry = new Date(currentVerificationUser.verificationExpiry);
+            
+            if (now > expiry) {
+                showNotification('Verification code has expired. Please request a new one.', 'error');
+                return;
+            }
+            
+            // Verify the code
+            if (enteredCode === currentVerificationUser.verificationCode) {
+                // Mark user as verified
+                const users = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+                if (users[currentVerificationUser.email]) {
+                    users[currentVerificationUser.email].isVerified = true;
+                    users[currentVerificationUser.email].verifiedAt = new Date().toISOString();
+                    delete users[currentVerificationUser.email].verificationCode;
+                    delete users[currentVerificationUser.email].verificationExpiry;
+                    localStorage.setItem('registeredUsers', JSON.stringify(users));
+                }
+                
+                clearInterval(verificationTimer);
+                closeEmailVerificationModal();
+                completeSignUp(users[currentVerificationUser.email]);
+            } else {
+                showNotification('Invalid verification code. Please try again.', 'error');
+                
+                // Clear the inputs and focus first one
+                for (let i = 1; i <= 6; i++) {
+                    document.getElementById(`code${i}`).value = '';
+                }
+                document.getElementById('code1').focus();
+            }
+        }
+        
+        function resendVerificationCode() {
+            if (!currentVerificationUser) {
+                showNotification('Verification session expired. Please sign up again.', 'error');
+                return;
+            }
+            
+            // Generate new code
+            const newCode = generateVerificationCode();
+            const newExpiry = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+            
+            // Update user data
+            const users = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+            if (users[currentVerificationUser.email]) {
+                users[currentVerificationUser.email].verificationCode = newCode;
+                users[currentVerificationUser.email].verificationExpiry = newExpiry;
+                localStorage.setItem('registeredUsers', JSON.stringify(users));
+                
+                currentVerificationUser.verificationCode = newCode;
+                currentVerificationUser.verificationExpiry = newExpiry;
+            }
+            
+            // Update UI
+            document.getElementById('demoCode').textContent = newCode;
+            
+            // Clear inputs
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById(`code${i}`).value = '';
+            }
+            document.getElementById('code1').focus();
+            
+            // Restart timer
+            clearInterval(verificationTimer);
+            startVerificationTimer();
+            
+            showNotification('New verification code sent!', 'success');
+        }
+        
+        function verifySignInEmailCode() {
+            let enteredCode = '';
+            for (let i = 1; i <= 6; i++) {
+                enteredCode += document.getElementById(`signInCode${i}`).value;
+            }
+            
+            if (enteredCode.length !== 6) {
+                showNotification('Please enter the complete 6-digit code', 'error');
+                return;
+            }
+            
+            if (!currentSignInUser) {
+                showNotification('Sign-in session expired. Please try signing in again.', 'error');
+                closeSignInVerificationModal();
+                return;
+            }
+            
+            // Check if code has expired
+            const now = new Date();
+            const expiry = new Date(currentSignInUser.signInVerificationExpiry);
+            
+            if (now > expiry) {
+                showNotification('Sign-in code has expired. Please try signing in again.', 'error');
+                return;
+            }
+            
+            // Verify the code
+            if (enteredCode === currentSignInUser.signInVerificationCode) {
+                // Clear the verification code from user data
+                const users = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+                if (users[currentSignInUser.email]) {
+                    delete users[currentSignInUser.email].signInVerificationCode;
+                    delete users[currentSignInUser.email].signInVerificationExpiry;
+                    users[currentSignInUser.email].lastSignIn = new Date().toISOString();
+                    localStorage.setItem('registeredUsers', JSON.stringify(users));
+                }
+                
+                clearInterval(signInVerificationTimer);
+                closeSignInVerificationModal();
+                completeSignIn(users[currentSignInUser.email]);
+            } else {
+                showNotification('Invalid verification code. Please try again.', 'error');
+                
+                // Clear the inputs and focus first one
+                for (let i = 1; i <= 6; i++) {
+                    document.getElementById(`signInCode${i}`).value = '';
+                }
+                document.getElementById('signInCode1').focus();
+            }
+        }
+        
+        function resendSignInVerificationCode() {
+            if (!currentSignInUser) {
+                showNotification('Sign-in session expired. Please try signing in again.', 'error');
+                return;
+            }
+            
+            // Generate new code
+            const newCode = generateVerificationCode();
+            const newExpiry = new Date(Date.now() + 10 * 60 * 1000).toISOString(); // 10 minutes
+            
+            // Update user data
+            const users = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+            if (users[currentSignInUser.email]) {
+                users[currentSignInUser.email].signInVerificationCode = newCode;
+                users[currentSignInUser.email].signInVerificationExpiry = newExpiry;
+                localStorage.setItem('registeredUsers', JSON.stringify(users));
+                
+                currentSignInUser.signInVerificationCode = newCode;
+                currentSignInUser.signInVerificationExpiry = newExpiry;
+            }
+            
+            // Update UI
+            document.getElementById('signInDemoCode').textContent = newCode;
+            
+            // Clear inputs
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById(`signInCode${i}`).value = '';
+            }
+            document.getElementById('signInCode1').focus();
+            
+            // Restart timer
+            clearInterval(signInVerificationTimer);
+            startSignInVerificationTimer();
+            
+            showNotification('New sign-in code sent!', 'success');
+        }
+        
+        function cancelSignInVerification() {
+            closeSignInVerificationModal();
+            showSignInModal();
+        }
+        
+        function closeSignInVerificationModal() {
+            document.getElementById('signInVerificationModal').classList.add('hidden');
+            clearInterval(signInVerificationTimer);
+            currentSignInUser = null;
+        }
+        
+        function closeEmailVerificationModal() {
+            document.getElementById('emailVerificationModal').classList.add('hidden');
+            clearInterval(verificationTimer);
+            currentVerificationUser = null;
+        }
+
+        // Helper Functions
+        function completeSignIn(userData) {
+            // Check if user is verified (for email accounts)
+            if (userData.provider === 'email' && !userData.isVerified) {
+                showNotification('Please verify your email address first', 'error');
+                showEmailVerificationModal(userData);
+                return;
+            }
+            
+            currentUser = userData;
+            localStorage.setItem('currentUser', JSON.stringify(userData));
+            updateAuthUI();
+            closeAllModals();
+            showNotification(`Welcome back, ${userData.firstName}!`, 'success');
+        }
+        
+        function completeSignUp(userData) {
+            currentUser = userData;
+            localStorage.setItem('currentUser', JSON.stringify(userData));
+            updateAuthUI();
+            closeAllModals();
+            showNotification(`Welcome to Antz's Garden, ${userData.firstName}!`, 'success');
+        }
+        
+        function showLoadingState(elementId, message) {
+            const element = document.getElementById(elementId);
+            if (element.tagName === 'FORM') {
+                const submitBtn = element.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = message;
+            } else {
+                element.disabled = true;
+                element.textContent = message;
+            }
+        }
+        
+        function resetButtonState(elementId, originalText) {
+            const element = document.getElementById(elementId);
+            element.disabled = false;
+            element.textContent = originalText;
+        }
+        
+        function resetFormState(formId, buttonText) {
+            const form = document.getElementById(formId);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = false;
+            submitBtn.textContent = buttonText;
+        }
+        
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 px-6 py-3 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-green-primary text-white' : 
+                type === 'error' ? 'bg-red-500 text-white' : 
+                'bg-blue-500 text-white'
+            }`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 4000);
+        }
+        
+        function showUserMenu() {
+            // Simple user menu - could be expanded
+            const menu = document.createElement('div');
+            menu.className = 'fixed top-16 right-4 bg-white border border-gray-200 rounded-lg shadow-lg z-50 p-2 min-w-48';
+            menu.innerHTML = `
+                <div class="px-3 py-2 border-b border-gray-100">
+                    <p class="font-medium text-gray-800">${currentUser.firstName} ${currentUser.lastName}</p>
+                    <p class="text-sm text-gray-500">${currentUser.email}</p>
+                </div>
+                <button onclick="signOut()" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded">
+                    Sign Out
+                </button>
+            `;
+            
+            // Remove existing menu if any
+            const existingMenu = document.querySelector('.fixed.top-16.right-4');
+            if (existingMenu) {
+                document.body.removeChild(existingMenu);
+                return;
+            }
+            
+            document.body.appendChild(menu);
+            
+            // Close menu when clicking outside
+            setTimeout(() => {
+                document.addEventListener('click', function closeMenu(e) {
+                    if (!menu.contains(e.target)) {
+                        if (document.body.contains(menu)) {
+                            document.body.removeChild(menu);
+                        }
+                        document.removeEventListener('click', closeMenu);
+                    }
+                });
+            }, 100);
+        }
+        
+        function signOut() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            updateAuthUI();
+            showNotification('You have been signed out', 'info');
+            
+            // Remove user menu if open
+            const menu = document.querySelector('.fixed.top-16.right-4');
+            if (menu) {
+                document.body.removeChild(menu);
+            }
+        }
+        
+        // Close modals when clicking outside
+        document.getElementById('signInModal').addEventListener('click', (e) => {
+            if (e.target.id === 'signInModal') {
+                closeSignInModal();
+            }
+        });
+        
+        document.getElementById('signUpModal').addEventListener('click', (e) => {
+            if (e.target.id === 'signUpModal') {
+                closeSignUpModal();
+            }
+        });
+        
+        document.getElementById('forgotPasswordModal').addEventListener('click', (e) => {
+            if (e.target.id === 'forgotPasswordModal') {
+                closeForgotPasswordModal();
+            }
+        });
+        
+        document.getElementById('emailVerificationModal').addEventListener('click', (e) => {
+            if (e.target.id === 'emailVerificationModal') {
+                // Don't allow closing verification modal by clicking outside
+                // User must complete verification or sign up again
+            }
+        });
+        
+        document.getElementById('signInVerificationModal').addEventListener('click', (e) => {
+            if (e.target.id === 'signInVerificationModal') {
+                // Don't allow closing sign-in verification modal by clicking outside
+                // User must complete verification or cancel
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9661a932d0f27b41',t:'MTc1MzY3NzIzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
